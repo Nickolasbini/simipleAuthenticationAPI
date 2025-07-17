@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Painel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center">
+
+  <div class="text-center">
+    <h1 class="text-4xl font-bold text-blue-600 mb-4">Olá, <span id="userName" class="capitalize">usuário</span>!</h1>
+    <p class="mb-6 text-gray-700">Você está logado com sucesso.</p>
+
+    <div class="space-x-4">
+      <button onclick="logout()" class="px-6 py-2 bg-red-600 text-white rounded hover:bg-red-700">Sair</button>
+      <a href="index.html" class="px-6 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-100">Voltar para a Home</a>
+    </div>
+  </div>
+
+  <script>
+    // Verifica se há token
+    const token = localStorage.getItem('token');
+    const name = localStorage.getItem('name');
+
+    if (!token || !name) {
+      alert("Você precisa estar logado.");
+      window.location.href = "login.html";
+    } else {
+      document.getElementById('userName').textContent = name;
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = 'login.html';
+    }
+  </script>
+
+</body>
+</html>
