@@ -76,4 +76,4 @@ Este projeto ensina:
 
 Pull requests e sugestões são muito bem-vindos!
 
-Desenvolvido com 💙 por Código Prático
+Desenvolvido por [Código Prático](https://www.youtube.com/@codigopratico) 📺
